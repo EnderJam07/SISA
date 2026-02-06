@@ -12,10 +12,10 @@ LDWI R5, -1         #Initialize R5 - index of found value
 BGE R3, R2, 32		#Exit loop if index >= size
 LDW R6, [R1]		#Load array value
 BNE R6, R4, 12      #Skip if R6 is not equal to R4
-STW R5, R3          #Store current index (R3) into R5
+ADDI R5, R3          #Store current index (R3) into R5
 B 12                #Break loop
 ADDI R1, R1, 1		#Increment R1 to point to (reference) the next array element
 ADDI R3, R3, 1		#Increment index
-B -28				#Branch to top of loop
-ADD R1, R3, R0		#Return total via R1
+B -36				#Branch to top of loop
+ADD R1, R5, R0		#Return index of search value via R1
 HALT				#Terminate the program

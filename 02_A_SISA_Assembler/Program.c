@@ -26,7 +26,7 @@ void main(int argc, char* argv[])
 	{
 		//Testcases_Execute();
 		
-		//executeAssembler("01_RegisterReadWrite_Base_10.aci", "01_RegisterReadWrite_Base_10.mci");
+		// executeAssembler("01_RegisterReadWrite_Base_10.aci", "01_RegisterReadWrite_Base_10.mci");
 		//executeAssembler("01_RegisterReadWrite_Base_16.aci", "01_RegisterReadWrite_Base_16.mci");
 		//executeAssembler("02_MemoryReadWrite_Base_10.aci", "02_MemoryReadWrite_Base_10.mci");
 		//executeAssembler("02_MemoryReadWrite_Base_16.aci", "02_MemoryReadWrite_Base_16.mci");
