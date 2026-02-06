@@ -1,0 +1,17 @@
+.data
+WORD [3] {h4,h5,h6}	#Three-element array of 32-bit (4 byte) words
+
+.code
+#Main Program
+LDWI R1, h0			#Initialize R1 - pointer to the array
+LDWI R2, h3			#Initialize R2 - array size
+LDWI R3, h0			#Initialize R3 - array index variable
+LDWI R4, h0			#Initialize R4 - array total
+BGE R3, R2, h18		#Exit loop if index >= size
+LDW R5, [R1]		#Load array value
+ADD R4, R4, R5		#Increment total
+ADDI R1, R1, h1	#Increment pointer to point to the next array element
+ADDI R3, R3, h1	#Increment index
+B hFFEC				#Branch to top of loop
+ADD R1, R4, R0		#Return total via R1
+HALT				#Terminate the program

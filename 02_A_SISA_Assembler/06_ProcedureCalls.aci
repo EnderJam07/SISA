@@ -1,0 +1,14 @@
+.data
+
+.code
+#Main Program
+LDWI R1, 1 		#Initialize R1
+LDWI R2, 2 		#Initialize R2
+JAL 12          #Jump to procedure sum
+ADD R1, R1, R0  #Return value 
+HALT			#Terminate the program
+
+#Procedure sum
+ADD R3, R1, R2  #Sum is stored in R3
+ADD R1, R3, R0	#Return sum
+JLR             #Return to caller

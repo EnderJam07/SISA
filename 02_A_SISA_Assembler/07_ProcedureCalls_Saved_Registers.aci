@@ -1,0 +1,18 @@
+.data
+
+.code
+#Main Program
+LDWI R1, 1 		#Initialize R1
+LDWI R2, 2 		#Initialize R2
+JAL 12          #Jump to procedure sum
+ADD R1, R1, R0  #Return value 
+HALT			#Terminate the program
+
+#Procedure sum
+ADDI SP, SP, -1	#Allocate 4 bytes (1 word) of stack memory
+STR R3, [SP]	#Save R3 in stack memory
+ADD R3, R1, R2  #Sum is stored in R3
+ADD R1, R3, R0	#Return sum
+LDR R3, [SP]	#Restore R3 from stack memory
+ADDI SP, SP, 1	#Deallocate 4 bytes (1 word) of stack memory
+JLR             #Return to caller

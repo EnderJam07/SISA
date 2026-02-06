@@ -1,0 +1,11 @@
+#Data Segment Assembly Directive
+.data
+
+#Code  Segment Assembly Directive
+.code
+#Main Program
+LDWI R1, h1			#Initialize x (R1)
+LDWI R2, h2			#Initialize y (R2)
+ADD R3, R1, R2		#x + y -> z (R3)
+ADD R1, R3, R0		#Return z (R3) via R1
+HALT				#Terminate the program

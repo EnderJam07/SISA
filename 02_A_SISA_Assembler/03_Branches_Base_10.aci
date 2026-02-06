@@ -1,0 +1,15 @@
+.data
+WORD 1			#Variable x
+WORD 2			#Variable y
+WORD 0			#Variable z
+
+.code
+#Main Program
+LDW R1, [R0+0]		#Load x into R1
+LDW R2, [R0+1]		#Load y into R2
+BL R1, R2, 12		#Branch if x < y
+STW R1, [R0+2]		#Store R1 (x) into z
+B 8					#Skip next instruction
+STW R2, [R0+2]		#Store R2 (y) into z
+LDW R1, [R0+2]		#Load z into R1 to return largest value
+HALT				#Terminate the program

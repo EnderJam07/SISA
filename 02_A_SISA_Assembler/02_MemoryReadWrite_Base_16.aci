@@ -1,0 +1,13 @@
+.data
+WORD h01			#Variable x
+WORD h02			#Variable y
+WORD h00			#Variable z
+
+.code
+#Main Program
+LDW R1, [R0+h0]		#Load x into R1
+LDW R2, [R0+h1]		#Load y into R2
+ADD R3, R1, R2		#x + y -> R3
+STW R3, [R0+h2]		#Store R3 into z
+ADD R1, R3, R0		#Return R3 via R1 
+HALT				#Terminate the program
