@@ -14,8 +14,8 @@ LDW R6, [R1]		#Load array value
 BNE R6, R4, 12      #Skip if R6 is not equal to R4
 ADDI R5, R3          #Store current index (R3) into R5
 B 16                #Break loop
-ADDI R1, R1, 1		#Increment R1 to point to (reference) the next array element
+ADDI R1, R1, 4		#Increment R1 to point to (reference) the next array element
 ADDI R3, R3, 1		#Increment index
-B -36				#Branch to top of loop
+B -28				#Branch to top of loop
 ADD R1, R5, R0		#Return index of search value via R1
 HALT				#Terminate the program
