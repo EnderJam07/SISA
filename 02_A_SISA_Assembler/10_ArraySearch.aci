@@ -1,0 +1,21 @@
+.data
+WORD [3] {4,5,6}	#Three-element array of 32-bit (4 byte) words
+WORD 5              #Search value - what we want to find and store
+
+.code
+#Main Program
+LDWI R1, 0			#Initialize R1 - base memory address of the array
+LDWI R2, 3			#Initialize R2 - array size
+LDWI R3, 0			#Initialize R3 - array index variable
+LDW R4, [R0+1]      #Initialize R4 - search value
+LDWI R5, -1         #Initialize R5 - index of found value
+BGE R3, R2, 32		#Exit loop if index >= size
+LDW R6, [R1]		#Load array value
+BNE R6, R4, 12      #Skip if R6 is not equal to R4
+STW R5, R3          #Store current index (R3) into R5
+B 12                #Break loop
+ADDI R1, R1, 1		#Increment R1 to point to (reference) the next array element
+ADDI R3, R3, 1		#Increment index
+B -28				#Branch to top of loop
+ADD R1, R3, R0		#Return total via R1
+HALT				#Terminate the program
