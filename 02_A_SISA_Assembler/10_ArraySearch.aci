@@ -7,12 +7,12 @@ LDWI R1, 0			#Initialize R1 - base memory address of the array
 LDWI R2, 3			#Initialize R2 - array size
 LDWI R3, 0			#Initialize R3 - array index variable
 LDWI  R4, 5     #Initialize R4 - search value
-LDWI R5, -1         #Initialize R5 - index of found value
-BGE R3, R2, 34		#Exit loop if index >= size
+LDWI R5, 0         #Initialize R5 - index of found value
+BGE R3, R2, 32		#Exit loop if index >= size
 LDW R6, [R1]		#Load array value
-BNE R6, R4, 12      #Skip if R6 is not equal to R4
+BNE R6, R4, 8      #Skip if R6 is not equal to R4
 ADDI R5, R3         #Store current index (R3) into R5
-B 16                #Break loop
+B 20                #Break loop
 ADDI R1, R1, 1		#Increment R1 to point to (reference) the next array element
 ADDI R3, R3, 1		#Increment index
 B -28				#Branch to top of loop
