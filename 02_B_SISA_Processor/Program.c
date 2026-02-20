@@ -71,13 +71,14 @@ void main(int argc, char* argv[])
 		//programReturnValue = ComputerExecuteProgram(&computer, "07_ProcedureCalls_Saved_Registers.mci");
 		//programReturnValue = ComputerExecuteProgram(&computer, "08_ProcedureCalls_Data_Segment.mci");
 		//programReturnValue = ComputerExecuteProgram(&computer, "09_ArrayMax.mci");
-		programReturnValue = ComputerExecuteProgram(&computer, "10_ArraySearch.mci");
+		//programReturnValue = ComputerExecuteProgram(&computer, "10_ArraySearch.mci");
 		//programReturnValue = ComputerExecuteProgram(&computer, "11_ArrayTotal_Procedure.mci");
-		// programReturnValue = ComputerExecuteProgram(&computer, "12_ArraySearch_Procedure.mci");
+		//programReturnValue = ComputerExecuteProgram(&computer, "12_ArraySearch_Procedure.mci");
 		//programReturnValue = ComputerExecuteProgram(&computer, "13_ArraySearch_Procedure_Stack_Parameters.mci");
-		//programReturnValue = ComputerExecuteProgram(&computer, "14_ArraySort.mci");
+		programReturnValue = ComputerExecuteProgram(&computer, "ArraySort.mci");
 		//programReturnValue = ComputerExecuteProgram(&computer, "15_ArraySort_Procedure.mci");
 		//programReturnValue = ComputerExecuteProgram(&computer, "16_ArraySort_Procedure_With_Swap.mci");
+		//programReturnValue = ComputerExecuteProgram(&computer, "ArraySearch_Procedure_Call.mci");	
 
 		printf("Program return value: %d\n\n", programReturnValue);
 	}

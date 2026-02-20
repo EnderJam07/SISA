@@ -1,0 +1,24 @@
+.data
+WORD [3] {4,5,6}
+
+.code
+#Main Program
+LDWI R1, 0		#Initialize R1 - base memory address of the array
+LDWI R2, 3		#Initialize R2 - array size
+LDWI R4, 5
+JAL 8			#Jump to the Loop method
+HALT			#Terminate the program
+
+# Loop Method
+ADDI SP, SP, -1		#Allocate 4 bytes of stack memory
+STW R3, [SP]		#Store R3 in the stack
+ADD R3, R0, R0		#Store 0 in R3
+BGE R3, R2, 24 
+LDW R5, [R1]
+BE R5, R4, 16
+ADDI R1, R1, 1
+ADDI R3, R3, 1
+B -20
+LDW R3, [R1]		#Load array value
+ADDI SP, SP, 1		#Increment R1 to point to (reference) the next array element
+JLR

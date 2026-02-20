@@ -504,6 +504,11 @@ void generateMemoryReadOrWriteMachineCodeInstruction(char* token, uint32_t* mach
     char* bracketRemoval = strtok(NULL, "[");
     char* bracketContent = strtok(NULL, "]");
 
+    if (bracketContent == NULL) {
+	printf("Must have brackets in LDW, did not find bracket for %s\n", token);
+	exit(1);
+    }
+
     char* memoryAddressBaseReg = NULL;
     char* memoryAddressOffset = NULL;
 

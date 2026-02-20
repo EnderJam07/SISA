@@ -75,7 +75,7 @@ int32_t CPUExecuteProgram(CPU* cpuPtr, uint32_t codeSegmentMemoryAddress, uint32
         //PC Update Stage
         CPUUpdatePC(cpuPtr, instructionFieldsPtr);
 
-        printf("************************** END PROCESSING INSTRUCTION **************************\n\n");
+        // printf("************************** END PROCESSING INSTRUCTION **************************\n\n");
 
         if (pauseAfterInstructionProcessed == PAUSE_AFTER_INSTRUCTION_PROCESSED)
         {
@@ -530,13 +530,13 @@ void CPUPrintInstruction(CPU* cpuPtr, uint16_t instructionCounter, InstructionFi
 {
     uint32_t byteAdjustedPc = cpuPtr->PC_Register << 2;
 
-    printf("************************ BEGIN PROCESSING INSTRUCTION: %2d **********************\n\n", instructionCounter);
+    printf("%2d: ", instructionCounter);
 
-    printf("Address (PC):      Hex: 0x%08X\n", byteAdjustedPc);
-    printf("Instruction (IR):  Hex: 0x%08X ", cpuPtr->IR_Register);
-    printf("Binary: ");
-    printf(THIRTY_TWO_BIT_BYTE_TO_BINARY_PATTERN, THIRTY_TWO_BIT_BYTE_TO_BINARY(cpuPtr->IR_Register));
-    printf("\n\n");
+    // printf("Address (PC):      Hex: 0x%08X\n", byteAdjustedPc);
+    // printf("Instruction (IR):  Hex: 0x%08X ", cpuPtr->IR_Register);
+    // printf("Binary: ");
+    // printf(THIRTY_TWO_BIT_BYTE_TO_BINARY_PATTERN, THIRTY_TWO_BIT_BYTE_TO_BINARY(cpuPtr->IR_Register));
+    // printf("\n\n");
 }
 
 void CPUPrintBaseRegisters(CPU* cpuPtr)

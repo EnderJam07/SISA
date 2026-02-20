@@ -1,0 +1,25 @@
+.data
+WORD [5] {5,4,3,2,1}	#Three-element array of 32-bit (4 byte) words
+
+.code
+#Main Program
+LDWI R1, 0			#Initialize R1 - base memory address of the array
+LDWI R2, 5			#Initialize R2 - array size
+LDWI R3, 0			#Initialize R3 - pass count
+LDWI R4, 0
+BGE R3, R2, 56			#Exit outer loop if pass count >= size
+LDWI R4, 0			#Initialize R4 - index var
+LDWI R5, 1			#Initialize R5 - index + 1 var
+BGE R5, R2, 36			#Exit inner loop if Index >= size
+LDW R6, [R4]			#Load array value to temp
+LDW R7, [R5]			#Load array index +1 value to temp
+BLE R6, R7, 12			#Check is the current index is greater
+STW R7, [R5]			#Store R7 to index + 1
+STW R6, [R4]			#Store R6 to index
+ADDI R4, R4, 1			#Increment R4
+ADDI R5, R5, 1			#Increment R5
+B -32				#Branch to top of inner loop
+ADDI R3, R3, 1			#Increment R3
+B -52				#Branch to top of outer loop
+LDW R1, [R0+1]
+HALT			#Terminate the program
